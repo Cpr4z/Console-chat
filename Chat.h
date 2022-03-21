@@ -3,22 +3,22 @@
 #include <exception>
 #include <memory>
 #include "Message.h"
-struct UserLoginExp :public std::exception{//вызываем класс исключений, в случае, если пользователя all
+struct UserLoginExp :public std::exception{//РІС‹Р·С‹РІР°РµРј РєР»Р°СЃСЃ РёСЃРєР»СЋС‡РµРЅРёР№, РІ СЃР»СѓС‡Р°Рµ, РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ all
 	const char* what() const noexcept override {
 		return "error: user login is busy";
 	}
 	
 };
-struct UserNameExp:public std::exception {//вызываем класс исключений, в случае , если пользователь all
+struct UserNameExp:public std::exception {//РІС‹Р·С‹РІР°РµРј РєР»Р°СЃСЃ РёСЃРєР»СЋС‡РµРЅРёР№, РІ СЃР»СѓС‡Р°Рµ , РµСЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ all
 	const char* what()const noexcept override {
 		return "error: user name is busy";
 	}
 };
 class Chat {
-	bool isChatWork_ = false;//переменная, отвечающая за работу чата
-	std::vector<User> userList_;//создаем вектор, который хранит пользователей чата
-	std::vector<Message> messageList_;//создаем вектор, который хранит сообщения в чате
-	std::shared_ptr<User> currentUser_ = nullptr;//shared указатель указывает на текущего пользователя
+	bool isChatWork_ = false;//РїРµСЂРµРјРµРЅРЅР°СЏ, РѕС‚РІРµС‡Р°СЋС‰Р°СЏ Р·Р° СЂР°Р±РѕС‚Сѓ С‡Р°С‚Р°
+	std::vector<User> userList_;//СЃРѕР·РґР°РµРј РІРµРєС‚РѕСЂ, РєРѕС‚РѕСЂС‹Р№ С…СЂР°РЅРёС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ С‡Р°С‚Р°
+	std::vector<Message> messageList_;//СЃРѕР·РґР°РµРј РІРµРєС‚РѕСЂ, РєРѕС‚РѕСЂС‹Р№ С…СЂР°РЅРёС‚ СЃРѕРѕР±С‰РµРЅРёСЏ РІ С‡Р°С‚Рµ
+	std::shared_ptr<User> currentUser_ = nullptr;//shared СѓРєР°Р·Р°С‚РµР»СЊ СѓРєР°Р·С‹РІР°РµС‚ РЅР° С‚РµРєСѓС‰РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 
 	void login();
 	void signUp();
